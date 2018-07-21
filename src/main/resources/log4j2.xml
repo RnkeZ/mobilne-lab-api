@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+	<Properties>
+		<Property name="appfilename">
+			./logs/mobilne-lab-api_%d{yyyy-MM-dd}-%i.log.zip
+		</Property>
+		<Property name="systemfilename">
+			./logs/system_mobilne-lab-api_%d{yyyy-MM-dd}-%i.log.zip
+		</Property>
+	</Properties>
+
+	<Appenders>
+		<RollingFile name="app-file-log-moblabapi"
+			filePattern="${appfilename}">
+			<PatternLayout>
+				<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} %c{10} - %msg%n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+				<CronTriggeringPolicy schedule="0 0 0 * * ?" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+		</RollingFile>
+
+		<RollingFile name="system-file-log-moblabapi"
+			filePattern="${systemfilename}">
+			<PatternLayout>
+				<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} %c{10} - %msg%n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+				<CronTriggeringPolicy schedule="0 0 0 * * ?" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+		</RollingFile>
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout>
+				<pattern>%-5level %d{HH:mm:ss.SSS} %logger{36} - %msg%n</pattern>
+			</PatternLayout>
+		</Console>
+
+	</Appenders>
+
+	<Loggers>
+		<Logger name="org" level="ERROR">
+			<AppenderRef ref="system-file-log-moblabapi" />
+		</Logger>
+		<Logger name="com.tvz" level="INFO">
+			<AppenderRef ref="app-file-log-moblabapi"/>
+		</Logger>
+		<Root level="ERROR">
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>

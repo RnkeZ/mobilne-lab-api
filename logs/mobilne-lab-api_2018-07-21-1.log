@@ -1,0 +1,138 @@
+[INFO ] 2018-07-21 17:51:28.336 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 17492 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 17:51:28.342 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 17:51:30.963 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.837 seconds (JVM running for 3.585)
+[INFO ] 2018-07-21 17:56:27.241 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 5072 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 17:56:27.248 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:02:37.299 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 2888 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:02:37.307 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:06:50.609 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 16328 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:06:50.616 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:07:26.436 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 21804 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:07:26.441 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:10:18.892 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 23840 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:10:18.897 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:10:57.860 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 12832 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:10:57.866 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:14:42.677 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 23172 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:14:42.682 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:14:45.125 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.648 seconds (JVM running for 3.394)
+[INFO ] 2018-07-21 18:19:35.578 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 12572 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:19:35.584 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:19:38.109 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.743 seconds (JVM running for 3.5)
+[INFO ] 2018-07-21 18:20:42.569 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 18512 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:20:42.574 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:20:45.237 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.88 seconds (JVM running for 3.637)
+[INFO ] 2018-07-21 18:25:43.241 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 19648 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:25:43.246 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:25:46.065 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 3.049 seconds (JVM running for 3.832)
+[INFO ] 2018-07-21 18:26:20.058 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 13204 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:26:20.064 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:26:22.761 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.919 seconds (JVM running for 3.695)
+[INFO ] 2018-07-21 18:26:23.069 com.tvz.mobilnelabapi.controllers.MobilneLabController - 
+[INFO ] 2018-07-21 18:27:44.082 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 11060 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:27:44.087 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:27:46.742 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.879 seconds (JVM running for 3.635)
+[INFO ] 2018-07-21 18:27:49.466 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}';
+[INFO ] 2018-07-21 18:27:49.466 com.tvz.mobilnelabapi.controllers.MobilneLabController - ;
+[INFO ] 2018-07-21 18:28:38.865 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 11436 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:28:38.871 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:28:41.494 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.848 seconds (JVM running for 3.612)
+[INFO ] 2018-07-21 18:28:44.408 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}';79
+[INFO ] 2018-07-21 18:28:44.409 com.tvz.mobilnelabapi.controllers.MobilneLabController - 
+[INFO ] 2018-07-21 18:30:13.774 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 13136 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:30:13.780 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:30:16.468 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.905 seconds (JVM running for 3.674)
+[INFO ] 2018-07-21 18:30:33.786 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}';79
+[INFO ] 2018-07-21 18:30:33.786 com.tvz.mobilnelabapi.controllers.MobilneLabController - ;
+[INFO ] 2018-07-21 18:30:44.606 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 3760 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:30:44.611 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:30:47.252 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.866 seconds (JVM running for 3.642)
+[INFO ] 2018-07-21 18:30:48.316 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}';79
+[INFO ] 2018-07-21 18:30:48.317 com.tvz.mobilnelabapi.controllers.MobilneLabController - ;
+[INFO ] 2018-07-21 18:31:43.702 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 9300 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:31:43.708 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:31:46.375 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.885 seconds (JVM running for 3.674)
+[INFO ] 2018-07-21 18:31:47.884 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}';
+[INFO ] 2018-07-21 18:32:22.338 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 14416 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:32:22.344 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:32:24.924 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.798 seconds (JVM running for 3.55)
+[INFO ] 2018-07-21 18:32:27.379 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}'
+[INFO ] 2018-07-21 18:33:03.749 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 2492 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:33:03.755 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:33:06.388 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.85 seconds (JVM running for 3.609)
+[INFO ] 2018-07-21 18:33:08.177 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:35:46.053 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 21612 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:35:46.059 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:35:48.548 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.702 seconds (JVM running for 3.42)
+[INFO ] 2018-07-21 18:36:13.257 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:36:13.258 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:37:23.365 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 22456 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:37:23.371 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:37:26.261 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 3.114 seconds (JVM running for 3.876)
+[INFO ] 2018-07-21 18:37:28.378 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:37:28.379 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:38:21.915 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 8756 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:38:21.921 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:38:24.524 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.83 seconds (JVM running for 3.604)
+[INFO ] 2018-07-21 18:38:36.505 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:38:36.506 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:42:52.470 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 8508 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:42:52.476 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:42:54.943 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.681 seconds (JVM running for 3.412)
+[INFO ] 2018-07-21 18:43:07.325 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:43:07.326 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:44:16.700 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 5872 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:44:16.706 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:44:19.247 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.753 seconds (JVM running for 3.478)
+[INFO ] 2018-07-21 18:44:24.955 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:44:24.956 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:45:50.021 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 6720 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:45:50.026 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:45:52.676 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.862 seconds (JVM running for 3.592)
+[INFO ] 2018-07-21 18:45:55.653 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:45:55.656 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:46:13.721 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 10868 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:46:13.727 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:46:16.332 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.827 seconds (JVM running for 3.594)
+[INFO ] 2018-07-21 18:46:20.714 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:46:20.716 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:46:55.266 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 7360 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:46:55.271 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:46:57.852 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.788 seconds (JVM running for 3.555)
+[INFO ] 2018-07-21 18:47:09.395 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:47:09.397 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:47:36.549 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 1020 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:47:36.555 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:47:39.187 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.858 seconds (JVM running for 3.625)
+[INFO ] 2018-07-21 18:47:43.354 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:47:43.356 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:48:26.862 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 16672 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:48:26.868 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:48:29.499 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.85 seconds (JVM running for 3.617)
+[INFO ] 2018-07-21 18:48:36.839 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:48:36.841 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:49:25.767 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 24076 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 18:49:25.772 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 18:49:28.388 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.839 seconds (JVM running for 3.591)
+[INFO ] 2018-07-21 18:49:30.285 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 18:49:30.289 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 19:19:31.350 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 1776 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 19:19:31.355 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 19:19:34.090 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.95 seconds (JVM running for 3.665)
+[INFO ] 2018-07-21 19:21:18.198 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 5780 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 19:21:18.204 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 19:21:20.847 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.868 seconds (JVM running for 3.645)
+[INFO ] 2018-07-21 19:22:27.553 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 10080 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 19:22:27.559 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 19:22:30.214 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.882 seconds (JVM running for 3.643)
+[INFO ] 2018-07-21 19:22:34.092 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 19:22:34.093 com.tvz.mobilnelabapi.controllers.MobilneLabController - {"info":{"address":[{"town":"Belgrade"},{"town":"Paris"},{"town":"Madrid"}]}}
+[INFO ] 2018-07-21 19:27:16.143 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 23944 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 19:27:16.150 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 19:27:18.805 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.873 seconds (JVM running for 3.614)
+[INFO ] 2018-07-21 19:28:14.447 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 21336 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 19:28:14.453 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 19:28:17.039 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 2.816 seconds (JVM running for 3.575)
+[INFO ] 2018-07-21 19:30:03.373 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on Unknown with PID 18048 (J:\Projects\mobilne-lab-api\target\classes started by Anon in J:\Projects\mobilne-lab-api)
+[INFO ] 2018-07-21 19:30:03.381 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,UNKNOWN
+[INFO ] 2018-07-21 19:30:06.441 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 3.346 seconds (JVM running for 4.147)
