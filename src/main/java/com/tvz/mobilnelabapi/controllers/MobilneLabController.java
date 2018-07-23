@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tvz.mobilnelabapi.mappers.dao.MeasurementsMapper;
 import com.tvz.mobilnelabapi.model.Measurements;
+import com.tvz.mobilnelabapi.utility.MobilneLabUtility;
 
 import io.swagger.annotations.Api;
 
@@ -34,9 +35,16 @@ public class MobilneLabController {
 
 	@RequestMapping(value = "measurements", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Measurements> getMeasurements(HttpServletRequest request) throws JSONException {
-		List<Measurements> list =  measurementsMapper.selectByExample(null);
-		String data = list.get(0).getData().substring(1, list.get(0).getData().length()-2);
-		list.get(0).setData(data);
+		List<Measurements> list = null;
+//		List<Measurements> list =  measurementsMapper.selectByExample(null);
+//		String data = list.get(0).getData().substring(1, list.get(0).getData().length()-2);
+//		list.get(0).setData(data);
+		MobilneLabUtility mobilneLabUtility = new MobilneLabUtility();
+		try {
+			mobilneLabUtility.convertFile();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return list;
 	}
 }

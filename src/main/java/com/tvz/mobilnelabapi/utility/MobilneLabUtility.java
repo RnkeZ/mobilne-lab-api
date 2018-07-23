@@ -13,9 +13,9 @@ import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 
 public class MobilneLabUtility {
 	
-	 public static void convertFile() throws Exception {
-	        File input = new File("/x/data.csv");
-	        File output = new File("/x/data.json");
+	 public void convertFile() throws Exception {
+	        File input = new File("./misc/data4g.csv");
+	        File output = new File("./misc/data.json");
 
 	        List<Map<?, ?>> data = readObjectsFromCsv(input);
 	        writeAsJson(data, output);
@@ -23,9 +23,8 @@ public class MobilneLabUtility {
 		
 	 public static List<Map<?, ?>> readObjectsFromCsv(File file) throws IOException {
 		 CsvMapper mapper = new CsvMapper();
-		 CsvSchema schema = CsvSchema.emptySchema().withHeader();
+		 CsvSchema schema = CsvSchema.emptySchema().withHeader().withColumnSeparator(';');
 	        MappingIterator<Map<?, ?>> mappingIterator = mapper.readerFor(Map.class).with(schema).readValues(file);
-
 	        return mappingIterator.readAll();
 	    }
 
