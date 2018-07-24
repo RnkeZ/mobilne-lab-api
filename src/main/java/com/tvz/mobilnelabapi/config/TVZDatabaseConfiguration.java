@@ -19,17 +19,17 @@ import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration()
 @ConfigurationProperties(prefix="spring.datasource")
-@MapperScan(basePackages = "com.tvz.mobilnelabapi.mappers.dao", sqlSessionTemplateRef = "HBORISSqlSessionTemplate")
-public class HBORISDatabaseConfiguration extends HikariConfig {
-	@Bean (name="HBORIS")
+@MapperScan(basePackages = "com.tvz.mobilnelabapi.mappers.dao", sqlSessionTemplateRef = "TVZSqlSessionTemplate")
+public class TVZDatabaseConfiguration extends HikariConfig {
+	@Bean (name="TVZ")
     @Primary
     public DataSource dataSource() {
           return new HikariDataSource(this);
     }
 	
-	@Bean(name = "HBORISSqlSessionFactory")
+	@Bean(name = "TVZSqlSessionFactory")
 	@Primary
-	public SqlSessionFactory HBORISSqlSessionFactory(@Qualifier("HBORIS") DataSource dataSource)
+	public SqlSessionFactory TVZSqlSessionFactory(@Qualifier("TVZ") DataSource dataSource)
 			throws Exception {
 		SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
 		bean.setDataSource(dataSource);
@@ -38,16 +38,16 @@ public class HBORISDatabaseConfiguration extends HikariConfig {
 		return bean.getObject();
 	}
 	
-	@Bean(name = "HBORISTransactionManager")
+	@Bean(name = "TVZTransactionManager")
 	@Primary
-	public DataSourceTransactionManager HBORISTransactionManager(@Qualifier("HBORIS") DataSource dataSource) {
+	public DataSourceTransactionManager TVZTransactionManager(@Qualifier("TVZ") DataSource dataSource) {
 		return new DataSourceTransactionManager(dataSource);
 	}
 
-	@Bean(name = "HBORISSqlSessionTemplate")
+	@Bean(name = "TVZSqlSessionTemplate")
 	@Primary
-	public SqlSessionTemplate HBORISSqlSessionTemplate(
-			@Qualifier("HBORISSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+	public SqlSessionTemplate TVZSqlSessionTemplate(
+			@Qualifier("TVZSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
 	
