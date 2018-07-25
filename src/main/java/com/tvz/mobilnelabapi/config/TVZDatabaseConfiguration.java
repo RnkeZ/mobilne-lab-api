@@ -18,26 +18,25 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration()
-@ConfigurationProperties(prefix="spring.datasource")
+@ConfigurationProperties(prefix = "spring.datasource.tvz")
 @MapperScan(basePackages = "com.tvz.mobilnelabapi.mappers.dao", sqlSessionTemplateRef = "TVZSqlSessionTemplate")
 public class TVZDatabaseConfiguration extends HikariConfig {
-	@Bean (name="TVZ")
-    @Primary
-    public DataSource dataSource() {
-          return new HikariDataSource(this);
-    }
-	
+	@Bean(name = "TVZ")
+	@Primary
+	public DataSource dataSource() {
+		return new HikariDataSource(this);
+	}
+
 	@Bean(name = "TVZSqlSessionFactory")
 	@Primary
-	public SqlSessionFactory TVZSqlSessionFactory(@Qualifier("TVZ") DataSource dataSource)
-			throws Exception {
+	public SqlSessionFactory TVZSqlSessionFactory(@Qualifier("TVZ") DataSource dataSource) throws Exception {
 		SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
 		bean.setDataSource(dataSource);
 		bean.setMapperLocations(
 				new PathMatchingResourcePatternResolver().getResources("com/tvz/mobilnelabapi/mappers/dao/*.java"));
 		return bean.getObject();
 	}
-	
+
 	@Bean(name = "TVZTransactionManager")
 	@Primary
 	public DataSourceTransactionManager TVZTransactionManager(@Qualifier("TVZ") DataSource dataSource) {
@@ -50,7 +49,5 @@ public class TVZDatabaseConfiguration extends HikariConfig {
 			@Qualifier("TVZSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
-	
-	
 
 }

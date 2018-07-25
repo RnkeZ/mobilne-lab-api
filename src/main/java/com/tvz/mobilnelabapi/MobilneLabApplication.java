@@ -8,9 +8,10 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class, DataSourceAutoConfiguration.class})
-@ComponentScan(value= { "com.tvz.mobilnelabapi"})
-//@EnableEurekaClient
+//@EnableAutoConfiguration(exclude = { SecurityAutoConfiguration.class, DataSourceAutoConfiguration.class })
+//@EnableAutoConfiguration(exclude = { SecurityAutoConfiguration.class })
+//@EnableAutoConfiguration
+@ComponentScan(value = { "com.tvz.mobilnelabapi" })
 public class MobilneLabApplication {
 
 	public static void main(String[] args) {
