@@ -149,3 +149,79 @@
 [WARN ] 2018-07-25 14:35:20.950 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
 [WARN ] 2018-07-25 14:35:20.955 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
 [WARN ] 2018-07-25 14:35:20.961 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 15:04:50.969 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 15:51:01.483 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 15:51:11.427 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[INFO ] 2018-07-25 15:52:05.744 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on PC8741 with PID 24860 (C:\Projects\Fax\mobilne-lab-api\target\classes started by mkern in C:\Projects\Fax\mobilne-lab-api)
+[INFO ] 2018-07-25 15:52:05.749 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,PC8741
+[INFO ] 2018-07-25 15:52:10.044 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 4.479 seconds (JVM running for 5.045)
+[WARN ] 2018-07-25 15:52:59.512 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 15:53:04.277 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 15:56:34.798 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 15:57:44.712 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 15:57:44.716 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 15:58:06.257 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 15:58:06.261 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:01:07.325 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:01:07.329 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[INFO ] 2018-07-25 16:02:21.894 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on PC8741 with PID 25100 (C:\Projects\Fax\mobilne-lab-api\target\classes started by mkern in C:\Projects\Fax\mobilne-lab-api)
+[INFO ] 2018-07-25 16:02:21.900 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,PC8741
+[INFO ] 2018-07-25 16:02:40.340 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on PC8741 with PID 20616 (C:\Projects\Fax\mobilne-lab-api\target\classes started by mkern in C:\Projects\Fax\mobilne-lab-api)
+[INFO ] 2018-07-25 16:02:40.345 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,PC8741
+[INFO ] 2018-07-25 16:02:44.640 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 4.479 seconds (JVM running for 5.038)
+[WARN ] 2018-07-25 16:02:50.308 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:04:22.938 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:04:23.551 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[INFO ] 2018-07-25 16:04:54.074 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on PC8741 with PID 16872 (C:\Projects\Fax\mobilne-lab-api\target\classes started by mkern in C:\Projects\Fax\mobilne-lab-api)
+[INFO ] 2018-07-25 16:04:54.079 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,PC8741
+[INFO ] 2018-07-25 16:04:58.471 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 4.578 seconds (JVM running for 5.131)
+[WARN ] 2018-07-25 16:05:00.720 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:05:00.740 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:07:15.668 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:07:43.015 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:09:15.502 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:12:13.405 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:12:13.410 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:13:19.140 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:13:19.144 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:13:58.184 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:13:58.188 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[INFO ] 2018-07-25 16:16:46.649 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on PC8741 with PID 20724 (C:\Projects\Fax\mobilne-lab-api\target\classes started by mkern in C:\Projects\Fax\mobilne-lab-api)
+[INFO ] 2018-07-25 16:16:46.654 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,PC8741
+[INFO ] 2018-07-25 16:16:50.997 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 4.528 seconds (JVM running for 5.082)
+[WARN ] 2018-07-25 16:16:55.546 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:16:55.566 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[INFO ] 2018-07-25 16:19:12.760 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on PC8741 with PID 14700 (C:\Projects\Fax\mobilne-lab-api\target\classes started by mkern in C:\Projects\Fax\mobilne-lab-api)
+[INFO ] 2018-07-25 16:19:12.766 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,PC8741
+[INFO ] 2018-07-25 16:19:18.010 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 5.462 seconds (JVM running for 6.397)
+[WARN ] 2018-07-25 16:19:20.260 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:19:20.283 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[INFO ] 2018-07-25 16:20:05.053 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on PC8741 with PID 12528 (C:\Projects\Fax\mobilne-lab-api\target\classes started by mkern in C:\Projects\Fax\mobilne-lab-api)
+[INFO ] 2018-07-25 16:20:05.054 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,PC8741
+[INFO ] 2018-07-25 16:20:10.488 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 5.662 seconds (JVM running for 6.395)
+[WARN ] 2018-07-25 16:20:14.147 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:20:14.173 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[INFO ] 2018-07-25 16:21:35.108 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on PC8741 with PID 14712 (C:\Projects\Fax\mobilne-lab-api\target\classes started by mkern in C:\Projects\Fax\mobilne-lab-api)
+[INFO ] 2018-07-25 16:21:35.114 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,PC8741
+[INFO ] 2018-07-25 16:21:40.326 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 5.431 seconds (JVM running for 6.058)
+[INFO ] 2018-07-25 16:22:10.005 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on PC8741 with PID 14988 (C:\Projects\Fax\mobilne-lab-api\target\classes started by mkern in C:\Projects\Fax\mobilne-lab-api)
+[INFO ] 2018-07-25 16:22:10.011 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,PC8741
+[INFO ] 2018-07-25 16:22:15.221 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 5.427 seconds (JVM running for 6.163)
+[WARN ] 2018-07-25 16:22:18.402 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[WARN ] 2018-07-25 16:22:18.425 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[INFO ] 2018-07-25 16:22:42.869 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on PC8741 with PID 22216 (C:\Projects\Fax\mobilne-lab-api\target\classes started by mkern in C:\Projects\Fax\mobilne-lab-api)
+[INFO ] 2018-07-25 16:22:42.875 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,PC8741
+[INFO ] 2018-07-25 16:22:48.085 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 5.425 seconds (JVM running for 6.151)
+[WARN ] 2018-07-25 16:22:49.080 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[INFO ] 2018-07-25 16:22:49.081 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - checking authentication for user 'null'
+[WARN ] 2018-07-25 16:22:49.104 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[INFO ] 2018-07-25 16:22:49.104 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - checking authentication for user 'null'
+[INFO ] 2018-07-25 16:24:50.416 com.tvz.mobilnelabapi.MobilneLabApplication - Starting MobilneLabApplication on PC8741 with PID 20624 (C:\Projects\Fax\mobilne-lab-api\target\classes started by mkern in C:\Projects\Fax\mobilne-lab-api)
+[INFO ] 2018-07-25 16:24:50.422 com.tvz.mobilnelabapi.MobilneLabApplication - The following profiles are active: default,PC8741
+[INFO ] 2018-07-25 16:24:55.594 com.tvz.mobilnelabapi.MobilneLabApplication - Started MobilneLabApplication in 5.389 seconds (JVM running for 6.116)
+[INFO ] 2018-07-25 16:24:57.831 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - header: 
+[WARN ] 2018-07-25 16:24:57.831 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[INFO ] 2018-07-25 16:24:57.831 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - checking authentication for user 'null'
+[INFO ] 2018-07-25 16:24:57.854 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - header: 
+[WARN ] 2018-07-25 16:24:57.854 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - couldn't find bearer string, will ignore the header
+[INFO ] 2018-07-25 16:24:57.854 com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter - checking authentication for user 'null'

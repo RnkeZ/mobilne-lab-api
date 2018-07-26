@@ -6,24 +6,26 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.tvz.mobilnelabapi.model.security.User;
+import com.tvz.mobilnelabapi.mappers.dao.AuthorityMapper;
+import com.tvz.mobilnelabapi.mappers.dao.UserMapper;
+import com.tvz.mobilnelabapi.model.User;
 import com.tvz.mobilnelabapi.security.JwtUserFactory;
-import com.tvz.mobilnelabapi.security.repository.UserRepository;
 
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
-
     @Autowired
-    private UserRepository userRepository;
+    private UserMapper userMapper;
+    
+    @Autowired
+	AuthorityMapper authorityMapper;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
-
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {;
+        User user = userMapper.selectByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));
         } else {
-            return JwtUserFactory.create(user);
+            return JwtUserFactory.create(user, authorityMapper.selectByExample(null));
         }
     }
 }

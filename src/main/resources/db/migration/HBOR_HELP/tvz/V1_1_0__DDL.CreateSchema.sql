@@ -16,7 +16,7 @@ firstname VARCHAR(50) NOT NULL,
 lastname VARCHAR(50) NOT NULL,
 email VARCHAR(50) NOT NULL,
 enabled bit,
-lastpasswordresetdate timestamp NOT NULL,
+lastpasswordresetdate datetime NOT NULL,
 CONSTRAINT user_pkey PRIMARY KEY (id)
 );
 

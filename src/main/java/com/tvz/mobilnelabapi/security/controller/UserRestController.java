@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tvz.mobilnelabapi.security.JwtTokenUtil;
 import com.tvz.mobilnelabapi.security.JwtUser;
 
+import io.swagger.annotations.Api;
+
 @RestController
+@RequestMapping("api")
+@Api(value = "Mobilne lab REST controller", tags = { "User" })
 public class UserRestController {
 
     @Value("${jwt.header}")

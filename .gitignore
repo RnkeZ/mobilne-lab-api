@@ -25,5 +25,7 @@
 /.nb-gradle/
 
 application-PC8741.properties
+generatorConfigHBORIS.xml
+/logs/
 
 /.apt_generated_tests/

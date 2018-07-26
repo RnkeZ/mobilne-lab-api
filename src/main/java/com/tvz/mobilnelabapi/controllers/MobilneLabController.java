@@ -22,7 +22,7 @@ import com.tvz.mobilnelabapi.utility.MobilneLabUtility;
 import io.swagger.annotations.Api;
 
 @RestController
-@RequestMapping("mobilne")
+@RequestMapping("api")
 @Api(value = "Mobilne lab REST controller", tags = { "Mobilne lab" })
 @Transactional
 public class MobilneLabController {
