@@ -27,9 +27,9 @@
 			targetPackage="com.tvz.mobilnelabapi.mappers.dao"
 			targetProject="mobilne-lab-api" type="ANNOTATEDMAPPER" />
 
-		<!-- <table schema="tvz" tableName="measurements"/> -->
+		<table schema="tvz" tableName="measurements" />
 		<table schema="tvz" tableName="user" />
-		<table schema="tvz" tableName="authoritiy" />
+		<table schema="tvz" tableName="authority" />
 		<table schema="tvz" tableName="user_authority" />
 
 	</context>
