@@ -10,7 +10,9 @@ import org.apache.logging.log4j.Logger;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +26,7 @@ import io.swagger.annotations.Api;
 
 @RestController
 @RequestMapping("api")
+@PreAuthorize("hasRole('USER')")
 @Api(value = "Mobilne lab REST controller", tags = { "Mobilne lab" })
 @Transactional
 public class MobilneLabController {
@@ -35,7 +38,7 @@ public class MobilneLabController {
 	MeasurementsMapper measurementsMapper;
 
 	@RequestMapping(value = "measurements", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	public void uploadMeasurements(HttpServletRequest request) throws JSONException {
+	public void uploadMeasurements(HttpServletRequest request, @RequestBody Measurements measurements) throws JSONException {
 		List<Measurements> list = null;
 		MobilneLabUtility mobilneLabUtility = new MobilneLabUtility();
 		try {
@@ -44,7 +47,8 @@ public class MobilneLabController {
 			e.printStackTrace();
 		}
 	}
-
+	
+	@PreAuthorize("hasRole('USER')")
 	@RequestMapping(value = "measurements", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Measurements> getMeasurements(HttpServletRequest request) throws JSONException {
 		logger.info(request.getUserPrincipal() + "\n" + request.getRemoteUser());

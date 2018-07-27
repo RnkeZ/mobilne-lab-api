@@ -76,6 +76,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
             .antMatchers("/auth/**").permitAll()
             
+            .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+            
             .antMatchers(
                     HttpMethod.GET,                  
                     "/v2/api-docs",           // swagger
@@ -91,7 +93,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // disable page caching
         httpSecurity
             .headers()
-            .frameOptions().sameOrigin()  // required to set for H2 else H2 Console will be blank.
+            .frameOptions().sameOrigin()
             .cacheControl();
     }
 
