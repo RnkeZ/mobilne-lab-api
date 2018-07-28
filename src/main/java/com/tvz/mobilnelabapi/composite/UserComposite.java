@@ -8,23 +8,23 @@ import com.tvz.mobilnelabapi.model.Authority;
 
 public class UserComposite extends User {
 	private static final long serialVersionUID = 1L;
-	List<String> authority;
-	List<Authority> authorityObject;
+	List<Authority> authority;
+	List<Authority> authorityString;
 
-	public List<String> getAuthority() {
+	public List<Authority> getAuthority() {
 		return authority;
 	}
 
-	public void setAuthority(List<String> authority) {
+	public void setAuthority(List<Authority> authority) {
 		this.authority = authority;
 	}
 
-	public List<Authority> getAuthorityObject() {
-		return authorityObject;
+	public List<Authority> getAuthorityString() {
+		return authorityString;
 	}
 
-	public void setAuthorityObject(List<Authority> authorityObject) {
-		this.authorityObject = authorityObject;
+	public void setAuthorityString(List<Authority> authorityString) {
+		this.authorityString = authorityString;
 	}
 
 }

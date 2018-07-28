@@ -3,34 +3,26 @@
 <generatorConfiguration>
 	<context id="context2">
 
-		<plugin
-			type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"></plugin>
-		<plugin
-			type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
+		<plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"></plugin>
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
 		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
 
-
-
-		<jdbcConnection
-			driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+		<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
 			connectionURL="jdbc:sqlserver://bunar.ddns.net:49172;DatabaseName=BUNAR"
 			userId="AppClient" password="JZ8ANxpj5jv4BzfL8Mp3XV8jKu8gC3Eq" />
 
-		<javaModelGenerator
-			targetPackage="com.tvz.mobilnelabapi.model"
+		<javaModelGenerator targetPackage="com.tvz.mobilnelabapi.model"
 			targetProject="mobilne-lab-api" />
-		<sqlMapGenerator
-			targetPackage="com.tvz.mobilnelabapi.mappers.xml"
+		<sqlMapGenerator targetPackage="com.tvz.mobilnelabapi.mappers.xml"
 			targetProject="mobilne-lab-api" />
-		<javaClientGenerator
-			targetPackage="com.tvz.mobilnelabapi.mappers.dao"
+		<javaClientGenerator targetPackage="com.tvz.mobilnelabapi.mappers.dao"
 			targetProject="mobilne-lab-api" type="ANNOTATEDMAPPER" />
 
-		<table schema="tvz" tableName="measurements" />
-		<table schema="tvz" tableName="user" />
-		<table schema="tvz" tableName="authority" />
-		<table schema="tvz" tableName="user_authority" />
+		<table schema="mob" tableName="Measurements" />
+		<table schema="mob" tableName="User" />
+		<table schema="mob" tableName="Authority" />
+		<table schema="mob" tableName="UserAuthority" domainObjectName="UserAuthority"/>
 
 	</context>
 </generatorConfiguration>

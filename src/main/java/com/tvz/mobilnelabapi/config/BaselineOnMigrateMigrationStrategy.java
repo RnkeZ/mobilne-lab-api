@@ -9,7 +9,7 @@ public class BaselineOnMigrateMigrationStrategy implements FlywayMigrationStrate
     @Override
     public void migrate(Flyway flyway) {
         flyway.setBaselineOnMigrate(true);
-        flyway.setSchemas("tvz");
+        flyway.setSchemas("mob");
         flyway.migrate();
     }
 }

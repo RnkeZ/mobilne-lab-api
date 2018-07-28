@@ -30,7 +30,6 @@ import io.swagger.annotations.Api;
 @Api(value = "Mobilne lab REST controller", tags = { "Mobilne lab" })
 @Transactional
 public class MobilneLabController {
-	Random rand = new Random();
 	private static final Logger logger = LogManager.getLogger(MobilneLabController.class);
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 
@@ -48,7 +47,6 @@ public class MobilneLabController {
 		}
 	}
 	
-	@PreAuthorize("hasRole('USER')")
 	@RequestMapping(value = "measurements", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Measurements> getMeasurements(HttpServletRequest request) throws JSONException {
 		logger.info(request.getUserPrincipal() + "\n" + request.getRemoteUser());
