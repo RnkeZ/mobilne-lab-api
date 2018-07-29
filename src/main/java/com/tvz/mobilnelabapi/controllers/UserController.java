@@ -79,11 +79,11 @@ public class UserController {
     @RequestMapping(value = "authorities", method = RequestMethod.GET)
     @PreAuthorize("hasRole('ROLE_USER')")
     public List<Authority> getAuthorities(HttpServletRequest request) {
-        List<Authority> users = authorityMapper.selectByExample(null);
-        return users;
+        List<Authority> authorities = authorityMapper.selectByExample(null);
+        return authorities;
     }
     
-    @RequestMapping(value = "user", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "user", method = RequestMethod.POST)
     @PreAuthorize("hasRole('ROLE_ADMIN')")
 	public void insertUser(HttpServletRequest request, @RequestBody UserComposite user) throws JSONException {
     	user.setPassword(cryptPasswordEncoder.encode(user.getPassword()));

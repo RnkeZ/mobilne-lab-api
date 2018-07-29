@@ -20,9 +20,11 @@
 			targetProject="mobilne-lab-api" type="ANNOTATEDMAPPER" />
 
 		<table schema="mob" tableName="Measurements" />
-		<table schema="mob" tableName="User" />
+		<table schema="mob" tableName="Device" />
+		<table schema="mob" tableName="Type" />
+<!-- 		<table schema="mob" tableName="User" /> -->
 		<table schema="mob" tableName="Authority" />
-		<table schema="mob" tableName="UserAuthority" domainObjectName="UserAuthority"/>
+<!-- 		<table schema="mob" tableName="UserAuthority" domainObjectName="UserAuthority"/> -->
 
 	</context>
 </generatorConfiguration>

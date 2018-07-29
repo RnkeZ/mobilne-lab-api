@@ -23,6 +23,7 @@ CREATE TABLE [mob].[Authority]
 (
 ID integer NOT NULL,
 Name VARCHAR(50) NOT NULL,
+FullName VARCHAR(50) NOT NULL,
 CONSTRAINT authority_pkey PRIMARY KEY (ID)
 );
 

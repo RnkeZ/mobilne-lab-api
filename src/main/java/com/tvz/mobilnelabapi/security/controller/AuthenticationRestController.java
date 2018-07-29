@@ -25,7 +25,10 @@ import com.tvz.mobilnelabapi.security.JwtTokenUtil;
 import com.tvz.mobilnelabapi.security.JwtUser;
 import com.tvz.mobilnelabapi.security.service.JwtAuthenticationResponse;
 
+import io.swagger.annotations.Api;
+
 @RestController
+@Api(value = "Mobilne lab REST controller", tags = { "Authentication" })
 public class AuthenticationRestController {
 
     @Value("${jwt.header}")
@@ -40,7 +43,7 @@ public class AuthenticationRestController {
     @Autowired
     @Qualifier("jwtUserDetailsService")
     private UserDetailsService userDetailsService;
-
+    
     @RequestMapping(value = "${jwt.route.authentication.path}", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest) throws AuthenticationException {
 

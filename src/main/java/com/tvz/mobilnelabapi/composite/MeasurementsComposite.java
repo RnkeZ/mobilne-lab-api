@@ -1,21 +1,28 @@
 package com.tvz.mobilnelabapi.composite;
 
-import org.json.JSONObject;
-
-import com.fasterxml.jackson.annotation.JsonRawValue;
+import com.tvz.mobilnelabapi.model.Device;
 import com.tvz.mobilnelabapi.model.Measurements;
+import com.tvz.mobilnelabapi.model.Type;
 
 public class MeasurementsComposite extends Measurements {
-
 	private static final long serialVersionUID = 1L;
-	private JSONObject dataJSON;
+	private Type type;
+	private Device device;
 
-	@JsonRawValue
-	public JSONObject getDataJSON() {
-		return dataJSON;
+	public Type getType() {
+		return type;
 	}
 
-	public void setDataJSON(JSONObject dataJSON) {
-		this.dataJSON = dataJSON;
+	public void setType(Type type) {
+		this.type = type;
 	}
+
+	public Device getDevice() {
+		return device;
+	}
+
+	public void setDevice(Device device) {
+		this.device = device;
+	}
+
 }

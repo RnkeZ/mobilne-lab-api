@@ -9,7 +9,7 @@ import com.tvz.mobilnelabapi.model.Authority;
 public class UserComposite extends User {
 	private static final long serialVersionUID = 1L;
 	List<Authority> authority;
-	List<Authority> authorityString;
+	List<String> authorityString;
 
 	public List<Authority> getAuthority() {
 		return authority;
@@ -19,12 +19,13 @@ public class UserComposite extends User {
 		this.authority = authority;
 	}
 
-	public List<Authority> getAuthorityString() {
+	public List<String> getAuthorityString() {
 		return authorityString;
 	}
 
-	public void setAuthorityString(List<Authority> authorityString) {
+	public void setAuthorityString(List<String> authorityString) {
 		this.authorityString = authorityString;
 	}
+
 
 }

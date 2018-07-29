@@ -1,8 +1,8 @@
 package com.tvz.mobilnelabapi.controllers;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
@@ -12,14 +12,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.tvz.mobilnelabapi.composite.MeasurementsComposite;
+import com.tvz.mobilnelabapi.composite.UserComposite;
 import com.tvz.mobilnelabapi.mappers.dao.MeasurementsMapper;
+import com.tvz.mobilnelabapi.model.Device;
 import com.tvz.mobilnelabapi.model.Measurements;
 import com.tvz.mobilnelabapi.model.MeasurementsExample;
+import com.tvz.mobilnelabapi.model.Type;
+import com.tvz.mobilnelabapi.model.UserExample;
 import com.tvz.mobilnelabapi.utility.MobilneLabUtility;
 
 import io.swagger.annotations.Api;
@@ -34,29 +43,36 @@ public class MobilneLabController {
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 
 	@Autowired
+	MobilneLabUtility mobilneLabUtility;
+
+	@Autowired
 	MeasurementsMapper measurementsMapper;
 
-	@RequestMapping(value = "measurements", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	public void uploadMeasurements(HttpServletRequest request, @RequestBody Measurements measurements) throws JSONException {
-		List<Measurements> list = null;
-		MobilneLabUtility mobilneLabUtility = new MobilneLabUtility();
-		try {
-			mobilneLabUtility.convertFile();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	@RequestMapping(value = "measurements", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Measurements> getMeasurements(HttpServletRequest request) throws JSONException {
-		logger.info(request.getUserPrincipal() + "\n" + request.getRemoteUser());
+	@RequestMapping(value = "measurements/{typeid}", method = RequestMethod.GET)
+	public List<MeasurementsComposite> getMeasurements(HttpServletRequest request,
+			@PathVariable(value = "typeid") Integer typeid) throws JSONException {
 		MeasurementsExample measurementsExample = new MeasurementsExample();
-		measurementsExample.createCriteria().andUsernameEqualTo(request.getRemoteUser());
-		List<Measurements> list = measurementsMapper.selectByExample(measurementsExample);
+		measurementsExample.createCriteria().andUsernameEqualTo(request.getRemoteUser()).andTypeidEqualTo(typeid);
+		List<MeasurementsComposite> list = measurementsMapper.selectCompositeByExample(measurementsExample);
 		if (list.size() > 0) {
 			String data = list.get(0).getData().substring(1, list.get(0).getData().length() - 2);
 			list.get(0).setData(data);
 		}
 		return list;
+	}
+
+	@RequestMapping(value = "measurements/upload/{typeid}/{deviceid}/{name}", method = RequestMethod.POST)
+	public void uploadMeasurement(HttpServletRequest request, @PathVariable(value = "typeid") Integer typeid,
+			@PathVariable(value = "deviceid") Integer deviceid, @PathVariable(value = "name") String name,
+			@RequestParam("file") MultipartFile file) throws Exception {
+		Measurements measurements = new Measurements();
+		measurements.setData(mobilneLabUtility.convertFile(file));
+		measurements.setDateofcreation(new Date());
+		measurements.setUserid(mobilneLabUtility.getUserByPrincipal(request.getRemoteUser()).getId());
+		measurements.setUsername(request.getRemoteUser());
+		measurements.setTypeid(typeid);
+		measurements.setDeviceid(deviceid);
+		measurements.setName(name);
+		measurementsMapper.insertSelective(measurements);
 	}
 }
