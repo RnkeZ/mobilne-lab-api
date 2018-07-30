@@ -28,6 +28,7 @@ import com.tvz.mobilnelabapi.model.Authority;
 import com.tvz.mobilnelabapi.model.Measurements;
 import com.tvz.mobilnelabapi.model.User;
 import com.tvz.mobilnelabapi.model.UserAuthority;
+import com.tvz.mobilnelabapi.model.UserAuthorityExample;
 import com.tvz.mobilnelabapi.security.JwtTokenUtil;
 import com.tvz.mobilnelabapi.security.JwtUser;
 import com.tvz.mobilnelabapi.utility.MobilneLabUtility;
@@ -94,6 +95,24 @@ public class UserController {
 		for (Authority item : user.getAuthority()) {
 			record.setAuthorityid(item.getId());
 			record.setUserid( user.getId());
+			userAuthorityMapper.insertSelective(record);
+		}	
+	}
+    
+    @RequestMapping(value = "user", method = RequestMethod.PUT)
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+	public void updateUser(HttpServletRequest request, @RequestBody UserComposite user) throws JSONException {
+    	user.setPassword(cryptPasswordEncoder.encode(user.getPassword()));
+    	user.setEnabled(true);
+    	user.setLastpasswordresetdate(new Date());
+		userMapper.updateByPrimaryKey(user);
+		UserAuthorityExample example = new UserAuthorityExample();
+		example.createCriteria().andUseridEqualTo(user.getId());
+		userAuthorityMapper.deleteByExample(example);
+		UserAuthority record = new UserAuthority();
+		for (Authority item : user.getAuthority()) {
+			record.setAuthorityid(item.getId());
+			record.setUserid(user.getId());
 			userAuthorityMapper.insertSelective(record);
 		}	
 	}

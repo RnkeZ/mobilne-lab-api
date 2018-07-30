@@ -137,10 +137,10 @@ public interface AuthorityMapper {
 			"where ID = #{id,jdbcType=INTEGER}" })
 	int updateByPrimaryKey(Authority record);
 
-	@Select({ "select", "name", "from mob.authority authority",
+	@Select({ "select", "FullName", "from mob.authority authority",
 			"inner join mob.UserAuthority userauthority ON userauthority.authorityid = authority.id ",
 			"where userauthority.userid = #{id,jdbcType=INTEGER}" })
-	@Results({ @Result(column = "name", property = "name", jdbcType = JdbcType.VARCHAR) })
+	@Results({ @Result(column = "FullName", property = "fullname", jdbcType = JdbcType.VARCHAR) })
 	List<String> selectAuthorityStringByUserId(Integer id);
 
 	@Select({ "select", "*", "from mob.authority authority",
