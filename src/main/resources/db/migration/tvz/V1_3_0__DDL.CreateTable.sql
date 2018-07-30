@@ -19,7 +19,7 @@ GO
 CREATE TABLE [mob].[Device](
 	ID int IDENTITY(1,1) PRIMARY KEY,
 	[Name] [varchar](50) NOT NULL,
-	[Description] [varchar](50) NOT NULL,
+	[Description] [varchar](1000) NOT NULL,
 );
 GO
 

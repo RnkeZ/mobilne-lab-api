@@ -38,8 +38,14 @@ public class DeviceController {
 
 	@RequestMapping(value = "device", method = RequestMethod.POST)
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public void insertUser(HttpServletRequest request, @RequestBody Device device) throws JSONException {
+	public void insertDevice(HttpServletRequest request, @RequestBody Device device) throws JSONException {
 		deviceMapper.insertSelective(device);
+	}
+	
+	@RequestMapping(value = "device", method = RequestMethod.PUT)
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	public void updateDevice(HttpServletRequest request, @RequestBody Device device) throws JSONException {
+		deviceMapper.updateByPrimaryKey(device);
 	}
 
 }
