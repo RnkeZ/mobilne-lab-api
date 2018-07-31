@@ -54,10 +54,6 @@ public class MobilneLabController {
 		MeasurementsExample measurementsExample = new MeasurementsExample();
 		measurementsExample.createCriteria().andUsernameEqualTo(request.getRemoteUser()).andTypeidEqualTo(typeid);
 		List<MeasurementsComposite> list = measurementsMapper.selectCompositeByExample(measurementsExample);
-		if (list.size() > 0) {
-			String data = list.get(0).getData().substring(1, list.get(0).getData().length() - 2);
-			list.get(0).setData(data);
-		}
 		return list;
 	}
 
