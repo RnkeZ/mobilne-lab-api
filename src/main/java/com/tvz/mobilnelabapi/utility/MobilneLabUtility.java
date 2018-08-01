@@ -38,7 +38,7 @@ public class MobilneLabUtility {
 
 	public static List<Map<?, ?>> readObjectsFromCsv(File file) throws IOException {
 		CsvMapper mapper = new CsvMapper();
-		CsvSchema schema = CsvSchema.emptySchema().withHeader().withColumnSeparator(';');
+		CsvSchema schema = CsvSchema.emptySchema().withHeader().withColumnSeparator(',');
 		MappingIterator<Map<?, ?>> mappingIterator = mapper.readerFor(Map.class).with(schema).readValues(file);
 		return mappingIterator.readAll();
 	}
