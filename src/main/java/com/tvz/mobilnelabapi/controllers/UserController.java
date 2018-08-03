@@ -63,10 +63,11 @@ public class UserController {
     private UserDetailsService userDetailsService;
 
     @RequestMapping(value = "user", method = RequestMethod.GET)
-    public JwtUser getAuthenticatedUser(HttpServletRequest request) {
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public UserComposite getAuthenticatedUser(HttpServletRequest request) {
         String token = request.getHeader(tokenHeader).substring(7);
         String username = jwtTokenUtil.getUsernameFromToken(token);
-        JwtUser user = (JwtUser) userDetailsService.loadUserByUsername(username);
+        UserComposite user = userMapper.selectByUsernameComposite(username);
         return user;
     }
     

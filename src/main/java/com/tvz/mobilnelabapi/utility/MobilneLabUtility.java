@@ -29,10 +29,7 @@ public class MobilneLabUtility {
 	UserMapper userMapper;
 
 	public String convertFile(MultipartFile file) throws Exception {
-//		File output = new File("./misc/data.json");
-//		File input = new File("./misc/data4g.csv");
-		File webInput = multipartToFile(file);
-		List<Map<?, ?>> data = readObjectsFromCsv(webInput);
+		List<Map<?, ?>> data = readObjectsFromCsv(multipartToFile(file));
 		return writeAsJson(data);
 	}
 
