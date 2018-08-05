@@ -72,6 +72,12 @@ public class MobilneLabController {
 		measurementsMapper.insertSelective(measurements);
 	}
 	
+	@RequestMapping(value = "measurements", method = RequestMethod.PUT)
+	public void updateMeasurement(HttpServletRequest request, @RequestBody MeasurementsComposite measurementsComposite) throws JSONException {
+		measurementsComposite.setData(measurementsMapper.selectCompositeByPrimaryKey(measurementsComposite.getId()).getData());
+		measurementsMapper.updateByPrimaryKey(measurementsComposite);
+	}
+	
 	@RequestMapping(value = "measurements/{measurementid}", method = RequestMethod.DELETE)
 	public void deleteMeasurement(HttpServletRequest request, @PathVariable(value = "measurementid") Integer measurementid) throws Exception {
 		measurementsMapper.deleteByPrimaryKey(measurementid);
