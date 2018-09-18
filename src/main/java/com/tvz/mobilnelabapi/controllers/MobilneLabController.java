@@ -9,7 +9,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,18 +16,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.tvz.mobilnelabapi.composite.MeasurementsteportdataComposite;
 import com.tvz.mobilnelabapi.composite.MeasurementsComposite;
-import com.tvz.mobilnelabapi.composite.UserComposite;
+import com.tvz.mobilnelabapi.mappers.dao.MeasurementreportdataMapper;
 import com.tvz.mobilnelabapi.mappers.dao.MeasurementsMapper;
-import com.tvz.mobilnelabapi.model.Device;
 import com.tvz.mobilnelabapi.model.Measurements;
 import com.tvz.mobilnelabapi.model.MeasurementsExample;
-import com.tvz.mobilnelabapi.model.Type;
-import com.tvz.mobilnelabapi.model.UserExample;
 import com.tvz.mobilnelabapi.utility.MobilneLabUtility;
 
 import io.swagger.annotations.Api;
@@ -47,6 +43,9 @@ public class MobilneLabController {
 
 	@Autowired
 	MeasurementsMapper measurementsMapper;
+	
+	@Autowired
+	MeasurementreportdataMapper  measurementreportdataMapper;
 
 	@RequestMapping(value = "measurements/{typeid}", method = RequestMethod.GET)
 	public List<MeasurementsComposite> getMeasurements(HttpServletRequest request,
@@ -81,5 +80,14 @@ public class MobilneLabController {
 	@RequestMapping(value = "measurements/{measurementid}", method = RequestMethod.DELETE)
 	public void deleteMeasurement(HttpServletRequest request, @PathVariable(value = "measurementid") Integer measurementid) throws Exception {
 		measurementsMapper.deleteByPrimaryKey(measurementid);
+	}
+	
+	@Transactional
+	@RequestMapping(value = "measurements/reportdata-calculations", method = RequestMethod.POST)
+	public void insertMeasurementReportData(HttpServletRequest request, @RequestBody List<MeasurementsteportdataComposite> measurementsCalculationsComposite) throws JSONException {
+		for (MeasurementsteportdataComposite item : measurementsCalculationsComposite) {
+			measurementreportdataMapper.insertSelective(item);
+		}
+		
 	}
 }

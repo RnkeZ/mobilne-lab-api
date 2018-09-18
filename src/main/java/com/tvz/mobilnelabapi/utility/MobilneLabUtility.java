@@ -24,24 +24,38 @@ import com.tvz.mobilnelabapi.model.UserExample;
 public class MobilneLabUtility {
 
 	private static final Logger logger = LogManager.getLogger(MobilneLabUtility.class);
-	
+
 	@Autowired
 	UserMapper userMapper;
 
 	public String convertFile(MultipartFile file) throws Exception {
-		List<Map<?, ?>> data = readObjectsFromCsv(multipartToFile(file));
+		List<Map<String, Object>> data = readObjectsFromCsv(multipartToFile(file));
 		return writeAsJson(data);
 	}
 
-	public static List<Map<?, ?>> readObjectsFromCsv(File file) throws IOException {
+	public static List<Map<String, Object>> readObjectsFromCsv(File file) throws IOException {
 		CsvMapper mapper = new CsvMapper();
 		CsvSchema schema = CsvSchema.emptySchema().withHeader().withColumnSeparator(',');
-		MappingIterator<Map<?, ?>> mappingIterator = mapper.readerFor(Map.class).with(schema).readValues(file);
+		MappingIterator<Map<String, Object>> mappingIterator = mapper.readerFor(Map.class).with(schema)
+				.readValues(file);
 		return mappingIterator.readAll();
 	}
 
-	public static String writeAsJson(List<Map<?, ?>> data) throws IOException {
+	public static String writeAsJson(List<Map<String, Object>> data) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
+		for (Map<String, Object> map : data) {
+			for (String key : map.keySet()) {
+				if (map.get(key).equals("") || map.get(key).equals("n/a")) {
+					map.replace(key, 0);
+				} else if (!key.equals("Time") && !map.get(key).equals("") && !map.get(key).equals("n/a")) {
+					try {
+						map.replace(key, Double.parseDouble((String) map.get(key)));
+					} catch (NumberFormatException e) {
+						map.replace(key, 0);
+					}
+				}
+			}
+		}
 		return mapper.writeValueAsString(data);
 	}
 
@@ -53,11 +67,11 @@ public class MobilneLabUtility {
 		fos.close();
 		return convFile;
 	}
-	
+
 	public User getUserByPrincipal(String username) {
 		UserExample example = new UserExample();
 		example.createCriteria().andUsernameEqualTo(username).andEnabledEqualTo(true);
 		return userMapper.selectByUsername(username);
 	}
-	
+
 }

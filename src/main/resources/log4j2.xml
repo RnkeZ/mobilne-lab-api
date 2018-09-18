@@ -52,5 +52,8 @@
 		<Root level="ERROR">
 			<AppenderRef ref="Console" />
 		</Root>
+		<Logger name="com.tvz.mobilnelabapi.mappers.dao" level="INFO">
+			<AppenderRef ref="Console" />
+		</Logger>
 	</Loggers>
 </Configuration>
