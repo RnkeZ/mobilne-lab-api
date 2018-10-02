@@ -9,7 +9,7 @@
 		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
 
 		<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-			connectionURL="jdbc:sqlserver://bunar.ddns.net:49172;DatabaseName=BUNAR"
+			connectionURL="jdbc:sqlserver://bunar.ddns.me:49172;DatabaseName=BUNAR"
 			userId="AppClient" password="JZ8ANxpj5jv4BzfL8Mp3XV8jKu8gC3Eq" />
 
 		<javaModelGenerator targetPackage="com.tvz.mobilnelabapi.model"
@@ -24,7 +24,8 @@
 		<!-- <table schema="mob" tableName="Type" /> -->
 		<!-- <table schema="mob" tableName="User" /> -->
 		<!-- <table schema="mob" tableName="Authority" /> -->
-		<table schema="mob" tableName="MeasurementReportData" />
+<!-- 		<table schema="mob" tableName="MeasurementReportData" /> -->
+		<table schema="mob" tableName="MeasurementReportImages" />
 		<!-- <table schema="mob" tableName="UserAuthority" domainObjectName="UserAuthority"/> -->
 
 	</context>

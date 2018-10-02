@@ -22,7 +22,9 @@ import org.springframework.web.multipart.MultipartFile;
 import com.tvz.mobilnelabapi.composite.MeasurementsteportdataComposite;
 import com.tvz.mobilnelabapi.composite.MeasurementsComposite;
 import com.tvz.mobilnelabapi.mappers.dao.MeasurementreportdataMapper;
+import com.tvz.mobilnelabapi.mappers.dao.MeasurementreportimagesMapper;
 import com.tvz.mobilnelabapi.mappers.dao.MeasurementsMapper;
+import com.tvz.mobilnelabapi.model.Measurementreportimages;
 import com.tvz.mobilnelabapi.model.Measurements;
 import com.tvz.mobilnelabapi.model.MeasurementsExample;
 import com.tvz.mobilnelabapi.utility.MobilneLabUtility;
@@ -43,9 +45,12 @@ public class MobilneLabController {
 
 	@Autowired
 	MeasurementsMapper measurementsMapper;
-	
+
 	@Autowired
-	MeasurementreportdataMapper  measurementreportdataMapper;
+	MeasurementreportdataMapper measurementreportdataMapper;
+
+	@Autowired
+	MeasurementreportimagesMapper measurementreportimagesMapper;
 
 	@RequestMapping(value = "measurements/{typeid}", method = RequestMethod.GET)
 	public List<MeasurementsComposite> getMeasurements(HttpServletRequest request,
@@ -70,24 +75,40 @@ public class MobilneLabController {
 		measurements.setName(name);
 		measurementsMapper.insertSelective(measurements);
 	}
-	
+
 	@RequestMapping(value = "measurements", method = RequestMethod.PUT)
-	public void updateMeasurement(HttpServletRequest request, @RequestBody MeasurementsComposite measurementsComposite) throws JSONException {
-		measurementsComposite.setData(measurementsMapper.selectCompositeByPrimaryKey(measurementsComposite.getId()).getData());
+	public void updateMeasurement(HttpServletRequest request, @RequestBody MeasurementsComposite measurementsComposite)
+			throws JSONException {
+		measurementsComposite
+				.setData(measurementsMapper.selectCompositeByPrimaryKey(measurementsComposite.getId()).getData());
 		measurementsMapper.updateByPrimaryKey(measurementsComposite);
 	}
-	
+
 	@RequestMapping(value = "measurements/{measurementid}", method = RequestMethod.DELETE)
-	public void deleteMeasurement(HttpServletRequest request, @PathVariable(value = "measurementid") Integer measurementid) throws Exception {
+	public void deleteMeasurement(HttpServletRequest request,
+			@PathVariable(value = "measurementid") Integer measurementid) throws Exception {
 		measurementsMapper.deleteByPrimaryKey(measurementid);
 	}
-	
+
+	@Transactional
+	@RequestMapping(value = "measurements/reportdata-images/{measurmentid}/{imagename}/", method = RequestMethod.POST)
+	public void insertMeasurementReportData(HttpServletRequest request,
+			@PathVariable("measurmentid") String measurmentid, @PathVariable("imagename") String imagename,
+			@RequestBody String image) throws JSONException {
+		Measurementreportimages measurementreportimages = new Measurementreportimages();
+		measurementreportimages.setMeasurementid(new Integer(measurmentid));
+		measurementreportimages.setImagename(imagename);
+		measurementreportimages.setImage(image);
+		measurementreportimagesMapper.insertSelective(measurementreportimages);
+	}
+
 	@Transactional
 	@RequestMapping(value = "measurements/reportdata-calculations", method = RequestMethod.POST)
-	public void insertMeasurementReportData(HttpServletRequest request, @RequestBody List<MeasurementsteportdataComposite> measurementsCalculationsComposite) throws JSONException {
+	public void insertMeasurementReportData(HttpServletRequest request,
+			@RequestBody List<MeasurementsteportdataComposite> measurementsCalculationsComposite) throws JSONException {
 		for (MeasurementsteportdataComposite item : measurementsCalculationsComposite) {
 			measurementreportdataMapper.insertSelective(item);
 		}
-		
+
 	}
 }
