@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tvz.mobilnelabapi.composite.UserComposite;
+import com.tvz.mobilnelabapi.mappers.dao.UserMapper;
 import com.tvz.mobilnelabapi.security.JwtAuthenticationRequest;
 import com.tvz.mobilnelabapi.security.JwtTokenUtil;
 import com.tvz.mobilnelabapi.security.JwtUser;
@@ -36,6 +38,9 @@ public class AuthenticationRestController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+    
+    @Autowired
+    UserMapper userMapper;
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
@@ -45,17 +50,17 @@ public class AuthenticationRestController {
     private UserDetailsService userDetailsService;
     
     @RequestMapping(value = "${jwt.route.authentication.path}", method = RequestMethod.POST)
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest) throws AuthenticationException {
-
+    public UserComposite createAuthenticationUserAndToken(@RequestBody JwtAuthenticationRequest authenticationRequest) throws AuthenticationException {
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
-
         // Reload password post-security so we can generate the token
-        final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
-        final String token = jwtTokenUtil.generateToken(userDetails);
-
-        // Return the token
-        return ResponseEntity.ok(new JwtAuthenticationResponse(token));
+        UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+        UserComposite user = userMapper.selectByUsernameComposite(userDetails.getUsername());
+//        user.setNovi(upitMapper.selectCompositeByKorisnickoIme(userDetails.getUsername()).size() == 0);
+        user.setToken(jwtTokenUtil.generateToken(userDetails));
+        return user;
     }
+    
+
 
     @RequestMapping(value = "${jwt.route.authentication.refresh}", method = RequestMethod.GET)
     public ResponseEntity<?> refreshAndGetAuthenticationToken(HttpServletRequest request) {

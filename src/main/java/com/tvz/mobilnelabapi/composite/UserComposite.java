@@ -10,6 +10,7 @@ public class UserComposite extends User {
 	private static final long serialVersionUID = 1L;
 	List<Authority> authority;
 	List<String> authorityString;
+	private String token;
 
 	public List<Authority> getAuthority() {
 		return authority;
@@ -27,5 +28,12 @@ public class UserComposite extends User {
 		this.authorityString = authorityString;
 	}
 
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
 
 }

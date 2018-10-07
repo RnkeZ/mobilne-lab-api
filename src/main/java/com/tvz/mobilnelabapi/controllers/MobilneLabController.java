@@ -24,7 +24,10 @@ import com.tvz.mobilnelabapi.composite.MeasurementsComposite;
 import com.tvz.mobilnelabapi.mappers.dao.MeasurementreportdataMapper;
 import com.tvz.mobilnelabapi.mappers.dao.MeasurementreportimagesMapper;
 import com.tvz.mobilnelabapi.mappers.dao.MeasurementsMapper;
+import com.tvz.mobilnelabapi.model.Measurementreportdata;
+import com.tvz.mobilnelabapi.model.MeasurementreportdataExample;
 import com.tvz.mobilnelabapi.model.Measurementreportimages;
+import com.tvz.mobilnelabapi.model.MeasurementreportimagesExample;
 import com.tvz.mobilnelabapi.model.Measurements;
 import com.tvz.mobilnelabapi.model.MeasurementsExample;
 import com.tvz.mobilnelabapi.utility.MobilneLabUtility;
@@ -92,7 +95,7 @@ public class MobilneLabController {
 
 	@Transactional
 	@RequestMapping(value = "measurements/reportdata-images/{measurmentid}/{imagename}/", method = RequestMethod.POST)
-	public void insertMeasurementReportData(HttpServletRequest request,
+	public void insertMeasurementReportImages(HttpServletRequest request,
 			@PathVariable("measurmentid") String measurmentid, @PathVariable("imagename") String imagename,
 			@RequestBody String image) throws JSONException {
 		Measurementreportimages measurementreportimages = new Measurementreportimages();
@@ -102,13 +105,34 @@ public class MobilneLabController {
 		measurementreportimagesMapper.insertSelective(measurementreportimages);
 	}
 
+	@RequestMapping(value = "measurements/reportdata-images/{measurmentid}", method = RequestMethod.GET)
+	public List<Measurementreportimages> getMeasurementReportImages(HttpServletRequest request,
+			@PathVariable("measurmentid") Integer measurmentid) throws JSONException {
+		MeasurementreportimagesExample measurementreportimagesExample = new MeasurementreportimagesExample();
+		measurementreportimagesExample.createCriteria().andMeasurementidEqualTo(measurmentid);
+		return measurementreportimagesMapper.selectByExample(measurementreportimagesExample);
+	}
+	
+	@RequestMapping(value = "measurements/reportdata-images/{id}", method = RequestMethod.DELETE)
+	public void deleteReportDataImage(HttpServletRequest request,
+			@PathVariable(value = "id") Integer id) throws Exception {
+		measurementreportimagesMapper.deleteByPrimaryKey(id);
+	}
+
 	@Transactional
 	@RequestMapping(value = "measurements/reportdata-calculations", method = RequestMethod.POST)
 	public void insertMeasurementReportData(HttpServletRequest request,
-			@RequestBody List<MeasurementsteportdataComposite> measurementsCalculationsComposite) throws JSONException {
-		for (MeasurementsteportdataComposite item : measurementsCalculationsComposite) {
+			@RequestBody List<Measurementreportdata> measurementsCalculationsComposite) throws JSONException {
+		for (Measurementreportdata item : measurementsCalculationsComposite) {
 			measurementreportdataMapper.insertSelective(item);
 		}
+	}
 
+	@RequestMapping(value = "measurements/reportdata-calculations/{measurmentid}", method = RequestMethod.GET)
+	public List<Measurementreportdata> getMeasurementReportData(HttpServletRequest request,
+			@PathVariable("measurmentid") Integer measurmentid) throws JSONException {
+		MeasurementreportdataExample measurementreportdataExample = new MeasurementreportdataExample();
+		measurementreportdataExample.createCriteria().andMeasurementidEqualTo(measurmentid);
+		return measurementreportdataMapper.selectByExample(measurementreportdataExample);
 	}
 }
