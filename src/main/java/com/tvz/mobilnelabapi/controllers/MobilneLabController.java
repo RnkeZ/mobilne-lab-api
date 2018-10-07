@@ -135,4 +135,10 @@ public class MobilneLabController {
 		measurementreportdataExample.createCriteria().andMeasurementidEqualTo(measurmentid);
 		return measurementreportdataMapper.selectByExample(measurementreportdataExample);
 	}
+	
+	@RequestMapping(value = "measurements/reportdata-calculations/{id}", method = RequestMethod.DELETE)
+	public void deleteMeasurementReportData(HttpServletRequest request,
+			@PathVariable(value = "id") Integer id) throws Exception {
+		measurementreportdataMapper.deleteByPrimaryKey(id);
+	}
 }
