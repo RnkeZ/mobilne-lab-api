@@ -1,16 +1,29 @@
 package com.tvz.mobilnelabapi.controllers;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipOutputStream;
 
 import javax.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +49,6 @@ import io.swagger.annotations.Api;
 
 @RestController
 @RequestMapping("api")
-@PreAuthorize("hasRole('USER')")
 @Api(value = "Mobilne lab REST controller", tags = { "Mobilne lab" })
 @Transactional
 public class MobilneLabController {
@@ -112,10 +124,10 @@ public class MobilneLabController {
 		measurementreportimagesExample.createCriteria().andMeasurementidEqualTo(measurmentid);
 		return measurementreportimagesMapper.selectByExample(measurementreportimagesExample);
 	}
-	
+
 	@RequestMapping(value = "measurements/reportdata-images/{id}", method = RequestMethod.DELETE)
-	public void deleteReportDataImage(HttpServletRequest request,
-			@PathVariable(value = "id") Integer id) throws Exception {
+	public void deleteReportDataImage(HttpServletRequest request, @PathVariable(value = "id") Integer id)
+			throws Exception {
 		measurementreportimagesMapper.deleteByPrimaryKey(id);
 	}
 
@@ -135,10 +147,35 @@ public class MobilneLabController {
 		measurementreportdataExample.createCriteria().andMeasurementidEqualTo(measurmentid);
 		return measurementreportdataMapper.selectByExample(measurementreportdataExample);
 	}
-	
+
 	@RequestMapping(value = "measurements/reportdata-calculations/{id}", method = RequestMethod.DELETE)
-	public void deleteMeasurementReportData(HttpServletRequest request,
-			@PathVariable(value = "id") Integer id) throws Exception {
+	public void deleteMeasurementReportData(HttpServletRequest request, @PathVariable(value = "id") Integer id)
+			throws Exception {
 		measurementreportdataMapper.deleteByPrimaryKey(id);
+	}
+
+	/*************/
+	@RequestMapping(value = "sync/{userid}", method = RequestMethod.GET, produces="application/zip")
+	public ResponseEntity<byte[]> getZip(HttpServletRequest request, @PathVariable(value = "userid") Integer userid) throws IOException {
+		String sourceFile = "J:\\Projects\\mobilne-lab-api\\src\\main\\resources\\public.txt";
+		ByteArrayOutputStream bos = new ByteArrayOutputStream();
+		ZipOutputStream zipOut = new ZipOutputStream(bos);
+		File fileToZip = new File(sourceFile);
+		FileInputStream fis = new FileInputStream(fileToZip);
+		ZipEntry zipEntry = new ZipEntry(fileToZip.getName());
+		zipOut.putNextEntry(zipEntry);
+		final byte[] bytes = new byte[1024];
+		int length;
+		while ((length = fis.read(bytes)) >= 0) {
+			zipOut.write(bytes, 0, length);
+		}
+		zipOut.close();
+		fis.close();
+		bos.close();
+		
+	    MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+	    headers.add("Content-Type", "application/octet-stream");
+	    headers.add("Content-Disposition", "attachment; filename=\"zipFile.zip\"");
+	    return new ResponseEntity<>(bos.toByteArray(), headers, HttpStatus.OK);
 	}
 }
