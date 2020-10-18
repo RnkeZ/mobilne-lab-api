@@ -21,105 +21,83 @@ import com.tvz.mobilnelabapi.security.JwtAuthenticationEntryPoint;
 import com.tvz.mobilnelabapi.security.JwtAuthorizationTokenFilter;
 import com.tvz.mobilnelabapi.security.service.JwtUserDetailsService;
 
-
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private JwtAuthenticationEntryPoint unauthorizedHandler;
+	@Autowired
+	private JwtAuthenticationEntryPoint unauthorizedHandler;
 
-    @Autowired
-    private JwtUserDetailsService jwtUserDetailsService;
+	@Autowired
+	private JwtUserDetailsService jwtUserDetailsService;
 
-    // Custom JWT based security filter
-    @Autowired
-    JwtAuthorizationTokenFilter authenticationTokenFilter;
+	// Custom JWT based security filter
+	@Autowired
+	JwtAuthorizationTokenFilter authenticationTokenFilter;
 
-    @Value("${jwt.header}")
-    private String tokenHeader;
+	@Value("${jwt.header}")
+	private String tokenHeader;
 
-    @Value("${jwt.route.authentication.path}")
-    private String authenticationPath;
+	@Value("${jwt.route.authentication.path}")
+	private String authenticationPath;
 
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-            .userDetailsService(jwtUserDetailsService)
-            .passwordEncoder(passwordEncoderBean());
-    }
+	@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+		auth.userDetailsService(jwtUserDetailsService).passwordEncoder(passwordEncoderBean());
+	}
 
-    @Bean
-    public PasswordEncoder passwordEncoderBean() {
-        return new BCryptPasswordEncoder();
-    }
+	@Bean
+	public PasswordEncoder passwordEncoderBean() {
+		return new BCryptPasswordEncoder();
+	}
 
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
-    }
+	@Bean
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
+	}
 
-    @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
-            // we don't need CSRF because our token is invulnerable
-            .csrf().disable()
+	@Override
+	protected void configure(HttpSecurity httpSecurity) throws Exception {
+		httpSecurity
+				// we don't need CSRF because our token is invulnerable
+				.csrf().disable()
 
-            .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+				.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 
-            // don't create session
-            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+				// don't create session
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 
-            .authorizeRequests()
-            
-            .antMatchers(HttpMethod.GET, "/api/sync/**").permitAll()
-            
-            .antMatchers("/auth/**").permitAll()
-            
-            .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-            
-            .antMatchers(
-                    HttpMethod.GET,                  
-                    "/v2/api-docs",           // swagger
-                    "/webjars/**",            // swagger-ui webjars
-                    "/swagger-resources/**",  // swagger-ui resources
-                    "/configuration/**"     // swagger configuration                
-            ).permitAll()
-            .anyRequest().authenticated();
+				.authorizeRequests()
 
-       httpSecurity
-            .addFilterBefore(authenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
+				.antMatchers(HttpMethod.GET, "/api/sync/**").permitAll()
 
-        // disable page caching
-        httpSecurity
-            .headers()
-            .frameOptions().sameOrigin()
-            .cacheControl();
-    }
+				.antMatchers("/auth/**").permitAll()
 
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        // AuthenticationTokenFilter will ignore the below paths
-        web
-            .ignoring()
-            .antMatchers(
-                HttpMethod.POST,
-                authenticationPath
-            )
+				.antMatchers(HttpMethod.GET, "/api/measurements/reportdata-images/downloadFile/**").permitAll()
 
-            // allow anonymous resource requests
-            .and()
-            .ignoring()
-            .antMatchers(
-                HttpMethod.GET,
-                "/",
-                "/*.html",
-                "/favicon.ico",
-                "/**/*.html",
-                "/**/*.css",
-                "/**/*.js"
-            );
-    }
+				.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+
+				.antMatchers(HttpMethod.GET, "/v2/api-docs", // swagger
+						"/webjars/**", // swagger-ui webjars
+						"/swagger-resources/**", // swagger-ui resources
+						"/configuration/**" // swagger configuration
+				).permitAll().anyRequest().authenticated();
+
+		httpSecurity.addFilterBefore(authenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
+
+		// disable page caching
+		httpSecurity.headers().frameOptions().sameOrigin().cacheControl();
+	}
+
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		// AuthenticationTokenFilter will ignore the below paths
+		web.ignoring().antMatchers(HttpMethod.POST, authenticationPath)
+
+				// allow anonymous resource requests
+				.and().ignoring()
+				.antMatchers(HttpMethod.GET, "/", "/*.html", "/favicon.ico", "/**/*.html", "/**/*.css", "/**/*.js");
+	}
 }

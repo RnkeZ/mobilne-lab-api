@@ -18,6 +18,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -29,8 +30,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.tvz.mobilnelabapi.composite.MeasurementsteportdataComposite;
 import com.tvz.mobilnelabapi.composite.MeasurementsComposite;
@@ -43,6 +46,7 @@ import com.tvz.mobilnelabapi.model.Measurementreportimages;
 import com.tvz.mobilnelabapi.model.MeasurementreportimagesExample;
 import com.tvz.mobilnelabapi.model.Measurements;
 import com.tvz.mobilnelabapi.model.MeasurementsExample;
+import com.tvz.mobilnelabapi.service.FileStorageService;
 import com.tvz.mobilnelabapi.utility.MobilneLabUtility;
 
 import io.swagger.annotations.Api;
@@ -66,6 +70,9 @@ public class MobilneLabController {
 
 	@Autowired
 	MeasurementreportimagesMapper measurementreportimagesMapper;
+
+	@Autowired
+	FileStorageService fileStorageService;
 
 	@RequestMapping(value = "measurements/{typeid}", method = RequestMethod.GET)
 	public List<MeasurementsComposite> getMeasurements(HttpServletRequest request,
@@ -109,11 +116,14 @@ public class MobilneLabController {
 	@RequestMapping(value = "measurements/reportdata-images/{measurmentid}/{imagename}/", method = RequestMethod.POST)
 	public void insertMeasurementReportImages(HttpServletRequest request,
 			@PathVariable("measurmentid") String measurmentid, @PathVariable("imagename") String imagename,
-			@RequestBody String image) throws JSONException {
+			@RequestPart("file") MultipartFile file) throws JSONException {
+		String fileName = fileStorageService.storeFile(file, request);
+		String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+				.path("/api/measurements/reportdata-images/downloadFile/").path(fileName).toUriString();
 		Measurementreportimages measurementreportimages = new Measurementreportimages();
 		measurementreportimages.setMeasurementid(new Integer(measurmentid));
 		measurementreportimages.setImagename(imagename);
-		measurementreportimages.setImage(image);
+		measurementreportimages.setImage(fileDownloadUri);
 		measurementreportimagesMapper.insertSelective(measurementreportimages);
 	}
 
@@ -125,9 +135,17 @@ public class MobilneLabController {
 		return measurementreportimagesMapper.selectByExample(measurementreportimagesExample);
 	}
 
+	@RequestMapping(value = "measurements/reportdata-images/downloadFile/{directory}/{imageuri:.+}", method = RequestMethod.GET)
+	public Resource getMeasurementReportImage(HttpServletRequest request, @PathVariable("directory") String directory,
+			@PathVariable("imageuri") String imageuri) throws JSONException {
+		return fileStorageService.loadFileAsResource(directory, imageuri);
+	}
+
 	@RequestMapping(value = "measurements/reportdata-images/{id}", method = RequestMethod.DELETE)
 	public void deleteReportDataImage(HttpServletRequest request, @PathVariable(value = "id") Integer id)
 			throws Exception {
+		Measurementreportimages imageToDelete = measurementreportimagesMapper.selectByPrimaryKey(id);
+		fileStorageService.deleteFile(imageToDelete.getImage().split("downloadFile/")[1]);
 		measurementreportimagesMapper.deleteByPrimaryKey(id);
 	}
 
@@ -155,27 +173,27 @@ public class MobilneLabController {
 	}
 
 	/*************/
-	@RequestMapping(value = "sync/{userid}", method = RequestMethod.GET, produces="application/zip")
-	public ResponseEntity<byte[]> getZip(HttpServletRequest request, @PathVariable(value = "userid") Integer userid) throws IOException {
-		String sourceFile = "J:\\Projects\\mobilne-lab-api\\src\\main\\resources\\public.txt";
-		ByteArrayOutputStream bos = new ByteArrayOutputStream();
-		ZipOutputStream zipOut = new ZipOutputStream(bos);
-		File fileToZip = new File(sourceFile);
-		FileInputStream fis = new FileInputStream(fileToZip);
-		ZipEntry zipEntry = new ZipEntry(fileToZip.getName());
-		zipOut.putNextEntry(zipEntry);
-		final byte[] bytes = new byte[1024];
-		int length;
-		while ((length = fis.read(bytes)) >= 0) {
-			zipOut.write(bytes, 0, length);
-		}
-		zipOut.close();
-		fis.close();
-		bos.close();
-		
-	    MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-	    headers.add("Content-Type", "application/octet-stream");
-	    headers.add("Content-Disposition", "attachment; filename=\"zipFile.zip\"");
-	    return new ResponseEntity<>(bos.toByteArray(), headers, HttpStatus.OK);
-	}
+//	@RequestMapping(value = "sync/{userid}", method = RequestMethod.GET, produces="application/zip")
+//	public ResponseEntity<byte[]> getZip(HttpServletRequest request, @PathVariable(value = "userid") Integer userid) throws IOException {
+//		String sourceFile = "J:\\Projects\\mobilne-lab-api\\src\\main\\resources\\public.txt";
+//		ByteArrayOutputStream bos = new ByteArrayOutputStream();
+//		ZipOutputStream zipOut = new ZipOutputStream(bos);
+//		File fileToZip = new File(sourceFile);
+//		FileInputStream fis = new FileInputStream(fileToZip);
+//		ZipEntry zipEntry = new ZipEntry(fileToZip.getName());
+//		zipOut.putNextEntry(zipEntry);
+//		final byte[] bytes = new byte[1024];
+//		int length;
+//		while ((length = fis.read(bytes)) >= 0) {
+//			zipOut.write(bytes, 0, length);
+//		}
+//		zipOut.close();
+//		fis.close();
+//		bos.close();
+//		
+//	    MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+//	    headers.add("Content-Type", "application/octet-stream");
+//	    headers.add("Content-Disposition", "attachment; filename=\"zipFile.zip\"");
+//	    return new ResponseEntity<>(bos.toByteArray(), headers, HttpStatus.OK);
+//	}
 }
